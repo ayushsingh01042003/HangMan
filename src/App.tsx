@@ -1,12 +1,11 @@
 import './index.css'
+import Keyboard from './components/Keyboard'
 
 const App = () => {
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>    
-    </>
+    <div className='max-w-xl mx-auto'>
+      <Keyboard />    
+    </div>
   )
 }
 
