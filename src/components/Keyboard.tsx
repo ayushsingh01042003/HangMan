@@ -10,8 +10,8 @@ const LETTERS = [
 const Keyboard = () => {
   return (
     <div className="grid grid-cols-8">
-      {LETTERS.map((letter) => {
-        return <Key letter={letter} />
+      {LETTERS.map((letter, index) => {
+        return <Key key={index} letter={letter} />
       })}
     </div>
   )
