@@ -1,3 +1,4 @@
+import { Dispatch, SetStateAction } from "react"
 import Key from "./Key"
 
 const LETTERS = [
@@ -7,11 +8,16 @@ const LETTERS = [
   'V', 'W', 'X', 'Y', 'Z'
 ]
 
-const Keyboard = () => {
+interface KeyboardProp {
+  currentGuess: string[],
+  setCurrentGuess: Dispatch<SetStateAction<string[]>>
+}
+
+const Keyboard = ({ currentGuess, setCurrentGuess }: KeyboardProp) => {
   return (
     <div className="grid grid-cols-8">
       {LETTERS.map((letter, index) => {
-        return <Key key={index} letter={letter} />
+        return <Key key={index} letter={letter} currentGuess={currentGuess} setCurrentGuess={setCurrentGuess} />
       })}
     </div>
   )

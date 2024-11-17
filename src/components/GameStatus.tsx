@@ -1,7 +1,12 @@
-const GameStatus = () => {
+interface GameStatusProps {
+  isWinner: boolean,
+  isLoser: boolean
+}
+
+const GameStatus = ({ isWinner, isLoser }: GameStatusProps) => {
   return (
     <div className="justify-self-center m-4 font-bold text-lg">
-      Guess the word!
+      {(isWinner && `YOU WON!`) || (isLoser && `YOU LOST!`) || `Guess the word!`} 
     </div>
   )
 }

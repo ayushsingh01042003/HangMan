@@ -1,15 +1,12 @@
-import { Dispatch, SetStateAction } from "react"
-
 interface LetterProp {
   character: string
-  currentGuess: string[],
-  setCurrentGuess: Dispatch<SetStateAction<string[]>>
+  currentGuess: string[]
 }
 
-const Letter = ({ character, currentGuess, setCurrentGuess }: LetterProp) => {
+const Letter = ({ character, currentGuess }: LetterProp) => {
   return (
     <div>
-      <div className="text-lg font-bold text-center invisible">
+      <div className={`text-lg font-bold text-center ${!currentGuess.includes(character) && 'invisible'}`}>
         { character }
       </div>
       <div className="h-1 w-10 bg-black mx-5"/>          

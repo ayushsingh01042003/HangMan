@@ -1,18 +1,16 @@
 import Letter from "./Letter"
-import { Dispatch, SetStateAction } from "react"
 
 interface GuessedWordProp {
   wordToGuess: string,
-  currentGuess: string[],
-  setCurrentGuess: Dispatch<SetStateAction<string[]>>
+  currentGuess: string[]
 }
 
-const GuessedWord = ({ wordToGuess, currentGuess, setCurrentGuess }: GuessedWordProp) => {
+const GuessedWord = ({ wordToGuess, currentGuess }: GuessedWordProp) => {
   return (
     <div className="flex justify-center mt-20 mb-10">
       {
         wordToGuess.split("").map((c, index) => 
-        <Letter key={index} character={c.toUpperCase()} currentGuess={currentGuess} setCurrentGuess={setCurrentGuess}/>)
+        <Letter key={index} character={c.toUpperCase()} currentGuess={currentGuess}/>)
       }
     </div>
   )

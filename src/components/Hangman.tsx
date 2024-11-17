@@ -22,15 +22,19 @@ const RIGHT_LEG = (
   <div className="absolute h-2 w-20 right-2 top-44 rotate-[210deg] origin-right bg-black"/>
 )
 
-const Hangman = () => {
+const BODY_PARTS = [
+  HEAD, BODY, LEFT_HAND,
+  RIGHT_HAND, LEFT_LEG, RIGHT_LEG
+]
+
+interface HangmanProp {
+  numberOfChances: number
+}
+
+const Hangman = ({ numberOfChances }: HangmanProp) => {
   return (
     <div className="content-center place-self-center relative">
-      { HEAD }
-      { BODY }
-      { LEFT_HAND }
-      { RIGHT_HAND }
-      { LEFT_LEG }
-      { RIGHT_LEG }
+      {BODY_PARTS.slice(0, numberOfChances)}
       <div className="h-2 w-[130px] ml-[120px] bg-black"/>
       <div className="absolute h-10 w-2 ml-[242px] bg-black"/>
       <div className="w-2 h-80 bg-black ml-[120px]"/>
